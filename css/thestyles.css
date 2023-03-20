@@ -9,7 +9,7 @@
 }
 
 .select{
-  background: #2a2f3b;
+  background: #4762a1;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -27,7 +27,7 @@
 }
 
 .select:hover{
-background: #323741;
+background: #3a558d;
 }
 
 .caret{
@@ -44,7 +44,7 @@ background: #323741;
 }
 
 .menu{
-   background: #323741;
+   background: #4762a1;
    border: 1px #363a43 solid;
    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
    border-radius: 0.5em;
