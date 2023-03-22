@@ -1,0 +1,50 @@
+//  Get all the dropdowns from the element
+const dropdowns = document.querySelectorAll('.dropdown');
+
+// All dropdown elements ma loop
+dropdowns.forEach((dropdown) => {
+  //  each dropdown ko element GET garcha
+  const select = dropdown.querySelector('.select');
+  const caret = dropdown.querySelector('.caret');
+  const menu = dropdown.querySelector('.menu');
+  const options = dropdown.querySelectorAll('.menu li');
+  const selected = dropdown.querySelector('.selected');
+
+  // Add a click event to the select element
+  select.addEventListener('click', () => {
+    // Add the clicked select styles to the select element
+    select.classList.toggle('select-clicked');
+
+    // Add the rotate styles to the caret element
+    caret.classList.toggle('caret-rotate');
+
+    // Add the open styles to the menu element
+    menu.classList.toggle('menu-open');
+  });
+
+  // All options element ma loop chalako
+  options.forEach((option) => {
+    // Add a click event to the option element
+    option.addEventListener('click', () => {
+      // change selected inner text to clicked option inner text
+      selected.innerText = option.innerText;
+
+      // Add the clicked select styles to the select element
+      select.classList.remove('select-clicked');
+
+      // caret element ma click pachi rotate class active gareko
+      caret.classList.remove('caret-rotate');
+
+      // menu click gare pachi menu-option class active gareko
+      menu.classList.remove('menu-open');
+
+      // Remove active class from all the option elements
+      options.forEach((option) => {
+        option.classList.remove('active');
+      });
+
+      // Add active class to clicked option element
+      option.classList.add('active');
+    });
+  });
+});
